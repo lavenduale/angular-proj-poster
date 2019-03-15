@@ -3,7 +3,8 @@ import { Component } from '@angular/core'; // one for package
 // decreator includes some configuration
 @Component({
     selector: 'app-post-create', // allow us to use this component and html tag including template
-    templateUrl: './post-create.component.html' // template for html
+    templateUrl: './post-create.component.html', // template for html
+    styleUrls: ['./post-create.component.css']
 })
 
 // class for the component
