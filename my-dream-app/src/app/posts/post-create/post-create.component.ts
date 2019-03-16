@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'; // one for package
+import { Component, EventEmitter, Output } from '@angular/core'; // one for package
 
 // decreator includes some configuration
 @Component({
@@ -9,9 +9,10 @@ import { Component } from '@angular/core'; // one for package
 
 // class for the component
 export class PostCreateComponent {
+    enteredTitle = '';
+    enteredContent = '';
+    @Output() postCreated = new EventEmitter(); // output a event which can listent to outside(app.component.html app-post-create tag element)
 
-    newPost = ' blank';
-    enteredValue = '';
 /*
     onAddPost(postInput: HTMLTextAreaElement){ // has been selected in post-create.component.html
         //console.dir(postInput);
@@ -21,6 +22,10 @@ export class PostCreateComponent {
     }
 */
     onAddPost(){
-        this.newPost = this.enteredValue;
+        const posts = {
+            title: this.enteredTitle,
+            content: this.enteredContent
+        };
+        this.postCreated.emit(posts); // emit posts to postCreated
     }
 }

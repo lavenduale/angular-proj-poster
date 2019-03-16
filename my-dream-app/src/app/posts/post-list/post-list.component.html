@@ -1,0 +1,9 @@
+<mat-accordion multi='true' *ngIf="posts.length > 0"> <!-- multiple bar can be open -->
+    <mat-expansion-panel *ngFor="let postline of posts"> <!-- declare a postline in the posts from ts -->
+        <mat-expansion-panel-header>
+            {{ postline.title }} <!-- call the title from postline from posts object -->
+        </mat-expansion-panel-header>
+        <p>{{ postline.content }}</p>
+    </mat-expansion-panel>
+</mat-accordion>
+<p class ="info-text mat-body-1" *ngIf="posts.length <= 0">No posts added yet!</p>
