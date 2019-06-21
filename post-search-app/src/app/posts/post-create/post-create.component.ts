@@ -21,5 +21,6 @@ export class PostCreateComponent {
         }
         //this.postCreated.emit(post); // pass the post as a argument
         this.postsService.addPost(form.value.title, form.value.content);
+        form.resetForm();
     }
 }
